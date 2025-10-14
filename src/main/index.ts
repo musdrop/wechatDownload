@@ -44,7 +44,7 @@ logger.debug('store.path', store.path);
 
 function createWindow(): void {
   MAIN_WINDOW = new BrowserWindow({
-    width: 900,
+    width: 980,
     height: 680,
     show: false,
     autoHideMenuBar: true,

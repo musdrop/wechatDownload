@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Download, Setting as SettingIcon, Document } from '@element-plus/icons-vue';
+import { Download, Setting as SettingIcon, Document, QuestionFilled } from '@element-plus/icons-vue';
 import Home from './views/Home.vue';
 import Setting from './views/Setting.vue';
 import EpubCreator from './views/EpubCreator.vue';
+import Guide from './views/Guide.vue';
 //中文包
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 
@@ -34,6 +35,12 @@ function changeMenuIdx(index) {
         </el-icon>
         <span>生成Epub</span>
       </el-menu-item>
+      <el-menu-item index="4">
+        <el-icon>
+          <QuestionFilled />
+        </el-icon>
+        <span>使用指南</span>
+      </el-menu-item>
     </el-menu>
     <div class="home-div">
       <keep-alive>
@@ -44,6 +51,9 @@ function changeMenuIdx(index) {
       </keep-alive>
       <keep-alive>
         <EpubCreator v-if="menuIdx === '3'" />
+      </keep-alive>
+      <keep-alive>
+        <Guide v-if="menuIdx === '4'" />
       </keep-alive>
     </div>
   </el-config-provider>
@@ -58,6 +68,7 @@ function changeMenuIdx(index) {
   z-index: 999;
   border-bottom: 1px solid var(--el-border-color-light);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
 }
 
 .home-div {
