@@ -325,7 +325,7 @@ async function html2Pdf(pdfInfo: PdfInfo) {
       })
       .finally(() => {
         pdfWindow.close();
-        fs.unlink(htmlPath, () => {});
+        fs.unlink(htmlPath, () => { });
         // 任务完成，通知worker线程
         worker?.postMessage(new NodeWorkerResponse(NwrEnum.PDF_FINISHED, '', pdfInfo.id));
       });
@@ -452,7 +452,7 @@ function createProxy(): AnyProxy.ProxyServer {
           }
         }
         // 监控下载，单条处理
-        if (DL_TYPE == DlEventEnum.BATCH_SELECT && requestDetail.url.indexOf('https://mp.weixin.qq.com/s') == 0) {
+        if (DL_TYPE == DlEventEnum.BATCH_SELECT && requestDetail.url.indexOf('https://mp.weixin.qq.com/mp/geticon') == 0) {
           const headers = requestDetail.requestOptions.headers;
           if (headers) {
             const referer = headers['Referer'] as string;
@@ -463,11 +463,12 @@ function createProxy(): AnyProxy.ProxyServer {
             const sn = HttpUtil.getQueryVariable(referer, 'sn');
             const chksm = HttpUtil.getQueryVariable(referer, 'chksm');
             const idx = HttpUtil.getQueryVariable(referer, 'idx');
+            const sessionid = HttpUtil.getQueryVariable(referer, 'sessionid');
             const gzhInfo = new GzhInfo(biz, key, uin);
             gzhInfo.Cookie = headers['Cookie'] as string;
             gzhInfo.UserAgent = headers['User-Agent'] as string;
 
-            const articleUrl = `http://mp.weixin.qq.com/s?__biz=${biz}&amp;mid=${mid}&amp;idx=${idx}&amp;sn=${sn}&amp;chksm=${chksm}&amp;scene=27#wechat_redirect`;
+            const articleUrl = `https://mp.weixin.qq.com/s?__biz=${biz}&mid=${mid}&idx=${idx}&sn=${sn}&chksm=${chksm}&scene=126&sessionid=${sessionid}#rd`;
 
             const articleInfo = new ArticleInfo(null, null, '');
             articleInfo.contentUrl = articleUrl;
