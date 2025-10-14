@@ -333,7 +333,7 @@ async function html2Pdf(pdfInfo: PdfInfo) {
 }
 
 /*
- * 开启公众号文章监测,获取用户参数
+ * 开启公众号文章监测,获取用户参数，用于批量下载
  */
 async function monitorArticle() {
   if ('db' == store.get('dlSource')) {
@@ -352,19 +352,19 @@ async function monitorArticle() {
     AnyProxy.utils.systemProxyMgr.enableGlobalProxy('127.0.0.1', '8001', 'https');
     outputLog('下载来源为网络');
     outputLog('代理开启成功，准备批量下载...', true);
-    outputLog('请在微信打开任意一篇需要批量下载的公众号的文章', true);
+    outputLog('请于20秒内在微信打开任意一篇需要批量下载的公众号的文章', true);
     outputLog('别偷懒，已经打开的不算...', true);
 
-    // 10秒之后自动关闭代理
+    // 20秒之后自动关闭代理
     TIMER = setTimeout(() => {
       outputLog('批量下载超时，未监测到公众号文章！', true);
       AnyProxy.utils.systemProxyMgr.disableGlobalProxy();
       MAIN_WINDOW.webContents.send('download-fnish');
-    }, 15000);
+    }, 20000);
   }
 }
 /*
- * 开启公众号文章监测,获取文章地址和用户参数
+ * 开启公众号文章监测,获取文章地址和用户参数，用于监控下载
  */
 async function monitorLimitArticle() {
   if (!PROXY_SERVER) {

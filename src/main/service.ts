@@ -782,8 +782,10 @@ class Service {
    */
   public objToArticle(appMsgExtInfo, dateTime: Date, articleArr: ArticleInfo[]) {
     const title = appMsgExtInfo['title'];
-    const contentUrl = appMsgExtInfo['content_url'];
+    let contentUrl = appMsgExtInfo['content_url'];
     if (contentUrl) {
+      // 去除url中的'amp;'，同时将'#wechat_redirect'替换为'#rd'
+      contentUrl = contentUrl.replace(/amp;/g, '').replace(/#wechat_redirect/g, '#rd');
       const article: ArticleInfo = { title: title, datetime: dateTime, contentUrl: contentUrl };
       article.author = appMsgExtInfo['author'];
       article.copyrightStat = appMsgExtInfo['copyright_stat'];

@@ -1,0 +1,320 @@
+{
+    "ret": 0,
+    "errmsg": "ok",
+    "msg_count": 10,
+    "can_msg_continue": 1,
+    "general_msg_list": {
+        "list": [
+            {
+                "comm_msg_info": {
+                    "id": 1000000802,
+                    "type": 49,
+                    "datetime": 1758805935,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "Spēs诗裴丝26秋招 | 拍摄、剪辑、模特、HR及天猫推广等岗位招募中！",
+                    "digest": "Spēs诗裴丝26秋招火热进行中！",
+                    "content": "",
+                    "fileid": 504029902,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513568&amp;idx=1&amp;sn=f56c8b4ec02e7ae1cdf39f16c602670f&amp;chksm=858cc1b0a240d04c37a5c10efe3ac3f19a75926f198a0aba99c1456539d3e4f0bc1f24c3a618&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGVMbj9WL3zubOicDSZicoQCLNjbCgWzJtTuBCOfhxcQdqNqJsFrfrib7wicudV5SVPbVDYibCbGnWbujpA/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "种子计划",
+                    "copyright_stat": 11,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            },
+            {
+                "comm_msg_info": {
+                    "id": 1000000801,
+                    "type": 49,
+                    "datetime": 1756900800,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "盟浪实习招募 | 邀你探索绿色科技行业的新大陆",
+                    "digest": "优质实习推荐~",
+                    "content": "",
+                    "fileid": 504029878,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513529&amp;idx=1&amp;sn=663a6e2cec1820f44cd9ab775a5a82cc&amp;chksm=85c8a6573511e52f52b7fcf50765c1428405c090a11f1cb1f0ed39130a204e20eabd60db6f8c&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGWZh1p5EMFBoIbVG26xKFFVYtPQGGV4AoU9bDCdGE6jmlBeU8E0gfALuqzFNEA6G3WyIFSibwRrsqQ/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "种子计划",
+                    "copyright_stat": 11,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            },
+            {
+                "comm_msg_info": {
+                    "id": 1000000800,
+                    "type": 49,
+                    "datetime": 1755604800,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "实习满月焦虑症：我跑 得慢，但绝不躺平！",
+                    "digest": "各位职场小萌新注意啦！当你发现同批实习生已经能独立写方案，自 己却还在和Excel表格搏斗时——别慌！",
+                    "content": "",
+                    "fileid": 504029849,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513504&amp;idx=1&amp;sn=9b32d48331d93c72132515254a68bd0c&amp;chksm=8562acac809eae0b58c91f7b8527ffd3147456919bfa62c5c725037cd22eddbf301f3583512e&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGXQy5bnUBSXPjnqbv00rVOUeyN3uRp6f90PR5iaia3AqDvicNXuUFPF97em3wJZBTomhjrXqSzmNDR2A/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "伊莱",
+                    "copyright_stat": 11,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            },
+            {
+                "comm_msg_info": {
+                    "id": 1000000799,
+                    "type": 49,
+                    "datetime": 1755172800,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "前方高能！大学生用AIGC整出了这些狠活！",
+                    "digest": "先上硬货！看 看种子计划的小伙伴们在璞康集团用AI搞出了什么名堂👇",
+                    "content": "",
+                    "fileid": 504029827,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513503&amp;idx=1&amp;sn=effc77b7dd9d7dc72982c5588bd3898e&amp;chksm=85c8fba987d933c3b8fd7254d9114d14a03d1beea55850631e208eee116eb11cc1780f955ef5&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGUgIeaia0WXiaIU4Wsad8MhG4oDnib65z9F8to10r84m0KNv0jfytzuYGFgG01vMfmiaFWzuF0kISzHAg/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "璞康集团",
+                    "copyright_stat": 11,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            },
+            {
+                "comm_msg_info": {
+                    "id": 1000000798,
+                    "type": 49,
+                    "datetime": 1753185600,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "领导总让我打杂？我该怎么在实习中脱颖而出 ？",
+                    "digest": "职场萌新总是盖章跑腿、拿外卖快递，这是正常的吗？种子君来解答疑惑！",
+                    "content": "",
+                    "fileid": 504029793,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513445&amp;idx=1&amp;sn=2cfb6a8d91744ec7ad5be8dc51ca6335&amp;chksm=85c73d000c838ef3b3463d0729143703cbaa7762517d0605f8f4731a33c308a1c2332eba2c50&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGUia18ZTnI720YnTYXLDmjLAG91d3e2zv4TJNo7uuibRk0YeWjib8c8sgCyTx9Rju43m8G6RbCpO4wpg/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "伊莱",
+                    "copyright_stat": 11,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            },
+            {
+                "comm_msg_info": {
+                    "id": 1000000797,
+                    "type": 49,
+                    "datetime": 1752580800,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "大学生的职场机会：从好好表达开始 | 2025种子计划启程",
+                    "digest": "种子们第一次线下集结，来看看他们参与了哪些丰富体验~",
+                    "content": "",
+                    "fileid": 504029744,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513432&amp;idx=1&amp;sn=028b4cef1ea4767b82d08d3258384f8f&amp;chksm=85f336f8e9cc345ea7813f98e469adb7ec32ee5bd54d16df92225638201ab156fdf233ea1540&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGWZAUichxzsU9qH9MY0sJqM8HXZvxibQpT2pv3jXD4mCJjsIv4doLRBRMWcFjdsDR90qG5zYjugMy8w/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "晨欣、伊莱",
+                    "copyright_stat": 11,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            },
+            {
+                "comm_msg_info": {
+                    "id": 1000000796,
+                    "type": 49,
+                    "datetime": 1751889600,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "职场变形记：大学生入职前vs入职后🤔",
+                    "digest": "各位职场萌新请注意！前方高能！快来对号入座这是不是你？✌",
+                    "content": "",
+                    "fileid": 504029728,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513380&amp;idx=1&amp;sn=b59c8164705bd40c6775191c83ddc5bd&amp;chksm=85bf6a2805adfce92a1829c73ed4a5ef3afdace68b85012d6110c78e2a3a0083f38e75818090&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGU8zxsUicKgT44HWcbxrCwK6xZhE3KAF8EXP6dOuym46nYzlRYSZzLOmeeNIUBic7cR2zjpuwMHIGSA/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "伊莱",
+                    "copyright_stat": 100,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            },
+            {
+                "comm_msg_info": {
+                    "id": 1000000795,
+                    "type": 49,
+                    "datetime": 1751630400,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "专治社恐！职场新人必学的5个「沟通」技巧",
+                    "digest": "三招带你学会如何有效提问和向上管理！准确理解需求是第一步~",
+                    "content": "",
+                    "fileid": 504029702,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513368&amp;idx=1&amp;sn=89f25443205219a81226376d60c915ae&amp;chksm=85c1b27ccd961dcb6b447e37e803621bf23899fe33234a510386c983c1e88d6a8e647a603045&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGUu5PGrfMtTJEicO5lUnKvNd7OE6Wva5c8nASuqmRfTEog0mVRrFfKVB4VDQ8nUryIXNllmbf9N7QA/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "伊莱",
+                    "copyright_stat": 100,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            },
+            {
+                "comm_msg_info": {
+                    "id": 1000000794,
+                    "type": 49,
+                    "datetime": 1751457600,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "入职倒计时！大学生必看的「实习第一天通关秘籍」来啦",
+                    "digest": "入职攻略大全：从心理建设到证件、合同，和基础工具的运用！",
+                    "content": "",
+                    "fileid": 504029711,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513362&amp;idx=1&amp;sn=fc0630302229b103e260ccf83d824811&amp;chksm=8550cbb838b5be1be4e6583fd2816b3ec461d0d12c765a36645f06e1f1d60a52263a46ac78f5&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGWPsDjciaIxOCXaQQthUlLkTX27hTVwEgLtrlqpNkqiaEwVD9E3XAzuMic8re1Bfk4sc52Ju4asUZU4g/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "伊莱",
+                    "copyright_stat": 100,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            },
+            {
+                "comm_msg_info": {
+                    "id": 1000000793,
+                    "type": 49,
+                    "datetime": 1750079253,
+                    "fakeid": "3071568925",
+                    "status": 2,
+                    "content": ""
+                },
+                "app_msg_ext_info": {
+                    "title": "实习补录 | 招募！搭上种子计划的最后班车！",
+                    "digest": "2025种子计划合作企业——苍原资本补录中",
+                    "content": "",
+                    "fileid": 504029691,
+                    "content_url": "http://mp.weixin.qq.com/s?__biz=MzA3MTU2ODkyNQ==&amp;mid=2651513342&amp;idx=1&amp;sn=987ebcdd6cb6ac2fef8ac85f526596d2&amp;chksm=85c6368927498246b635a7f588f6a4eceb034f569a969b84ed19f10173180737ef5e61186ea2&amp;scene=27#wechat_redirect",
+                    "source_url": "",
+                    "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ibjzllJHXnGXIe0ecSa0nTiaxw79icsUrCqR5G9OUmaw6pkBX2BeoaG0I3oJOZ7XkrEwVIVhVE4CAEcRdO50icz14w/0?wx_fmt=jpeg",
+                    "subtype": 9,
+                    "is_multi": 0,
+                    "multi_app_msg_item_list": [],
+                    "author": "种子计划",
+                    "copyright_stat": 11,
+                    "duration": 0,
+                    "del_flag": 1,
+                    "item_show_type": 0,
+                    "audio_fileid": 0,
+                    "play_url": "",
+                    "malicious_title_reason_id": 0,
+                    "malicious_content_type": 0
+                }
+            }
+        ]
+    }
+}
