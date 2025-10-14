@@ -171,6 +171,9 @@ $ npm run build:linux
 
 ## 特别感谢
 
+本项目 fork 自 [xiaoguyu/wechatDownload](https://github.com/xiaoguyu/wechatDownload)
+
+
 [![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=wechatDownload)
 
 感谢 [JetBrains](https://www.jetbrains.com/?from=wechatDownload) 提供的开源开发许可证
