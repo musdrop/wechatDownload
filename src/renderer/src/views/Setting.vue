@@ -1,126 +1,225 @@
 <template>
-  <el-container>
-    <el-header height="35px">
-      首次运行需要安装证书(安装一次即可)，请手动完成此设置：
-      <el-button type="primary" size="small" @click="installLicence">安装证书</el-button>
-      <el-button type="primary" size="small" @click="openLicence">打开证书路径</el-button>
-    </el-header>
-    <el-main>
-      <el-row :gutter="5">
+  <el-container class="setting-container">
+
+    <el-main class="setting-main">
+      <el-row :gutter="16">
+        <el-alert type="info" :closable="false" show-icon class="setting-alert">
+          <p class="setting-alert-info">首次运行需要安装证书(仅一次)</p>
+          <el-button type="primary" size="small" @click="installLicence">
+            <el-icon>
+              <Download />
+            </el-icon>
+            安装证书
+          </el-button>
+          <el-button type="default" size="small" @click="openLicence">
+            <el-icon>
+              <FolderOpened />
+            </el-icon>
+            打开证书路径
+          </el-button>
+        </el-alert>
         <el-col :span="12">
-          <div class="div-border div-pd">
-            <span class="line-center">下载来源 </span>
-            <el-radio-group v-model="settingInfo.dlSource">
+          <!-- 下载来源 -->
+          <el-card class="setting-card" shadow="hover">
+            <template #header>
+              <div class="card-header">
+                <el-icon>
+                  <Coordinate />
+                </el-icon>
+                <span>下载来源</span>
+              </div>
+            </template>
+            <el-radio-group v-model="settingInfo.dlSource" size="large">
               <el-radio-button label="网络" value="web" />
               <el-radio-button label="数据库" value="db" />
             </el-radio-group>
-          </div>
-          <div class="div-border div-pd" title="json格式">
-            <span>过滤规则</span>
-            <el-input v-model="settingInfo.filterRule" placeholder="筛选文章" />
-          </div>
-          <div class="div-border div-pd">
-            <el-row>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.dlHtml" label="下载为html" size="large" />
-              </el-col>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.dlAudio" label="下载音频到本地" size="large" />
-              </el-col>
-            </el-row>
-            <el-row>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.dlMarkdown" label="下载为markdown" size="large" />
-              </el-col>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.dlImg" label="下载图片到本地" size="large" />
-              </el-col>
-            </el-row>
-            <el-row>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.dlPdf" label="下载为pdf" size="large" />
-              </el-col>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.dlComment" label="下载评论" size="large" />
-              </el-col>
-            </el-row>
-            <el-row>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.dlMysql" label="保存至Mysql" size="large" />
-              </el-col>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.dlCommentReply" label="下载评论回复" size="large" />
-              </el-col>
-            </el-row>
-            <el-row>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.skinExist" label="跳过现有文章" size="large" />
-              </el-col>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.sourceUrl" label="添加原文链接" size="large" />
-              </el-col>
-            </el-row>
-            <el-row>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.saveMeta" label="保存元数据" size="large" />
-              </el-col>
-              <el-col :span="12">
-                <el-checkbox v-model="settingInfo.classifyDir" label="按公众号分类保存" size="large" />
-              </el-col>
-            </el-row>
-          </div>
+          </el-card>
+          <!-- 下载选项 -->
+          <el-card class="setting-card" shadow="hover">
+            <template #header>
+              <div class="card-header">
+                <el-icon>
+                  <Setting />
+                </el-icon>
+                <span>下载选项</span>
+              </div>
+            </template>
+            <div class="checkbox-grid">
+              <el-checkbox v-model="settingInfo.dlHtml" size="large">
+                <el-icon>
+                  <Document />
+                </el-icon>
+                下载为HTML
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.dlAudio" size="large">
+                <el-icon>
+                  <Headset />
+                </el-icon>
+                下载音频
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.dlMarkdown" size="large">
+                <el-icon>
+                  <EditPen />
+                </el-icon>
+                下载为Markdown
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.dlImg" size="large">
+                <el-icon>
+                  <Picture />
+                </el-icon>
+                下载图片
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.dlPdf" size="large">
+                <el-icon>
+                  <Document />
+                </el-icon>
+                下载为PDF
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.dlComment" size="large">
+                <el-icon>
+                  <ChatDotRound />
+                </el-icon>
+                下载评论
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.dlMysql" size="large">
+                <el-icon>
+                  <Coin />
+                </el-icon>
+                保存至MySQL
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.dlCommentReply" size="large">
+                <el-icon>
+                  <ChatLineRound />
+                </el-icon>
+                下载评论回复
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.skinExist" size="large">
+                <el-icon>
+                  <CircleClose />
+                </el-icon>
+                跳过现有文章
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.sourceUrl" size="large">
+                <el-icon>
+                  <Link />
+                </el-icon>
+                添加原文链接
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.saveMeta" size="large">
+                <el-icon>
+                  <Files />
+                </el-icon>
+                保存元数据
+              </el-checkbox>
+              <el-checkbox v-model="settingInfo.classifyDir" size="large">
+                <el-icon>
+                  <Folder />
+                </el-icon>
+                按公众号分类
+              </el-checkbox>
+            </div>
+          </el-card>
+          <!-- 过滤规则 -->
+          <el-card class="setting-card" shadow="hover">
+            <template #header>
+              <div class="card-header">
+                <el-icon>
+                  <Filter />
+                </el-icon>
+                <span>过滤规则</span>
+              </div>
+            </template>
+            <el-input v-model="settingInfo.filterRule" placeholder="筛选文章 (JSON格式)" :rows="3" type="textarea" />
+          </el-card>
         </el-col>
+
         <el-col :span="12">
-          <div class="grid-content ep-bg-purple" />
-          <div class="item div-border div-pd">
-            <div>下载范围</div>
-            <el-radio-group v-model="settingInfo.dlScpoe">
+          <!-- 下载范围 -->
+          <el-card class="setting-card" shadow="hover">
+            <template #header>
+              <div class="card-header">
+                <el-icon>
+                  <Calendar />
+                </el-icon>
+                <span>下载范围</span>
+              </div>
+            </template>
+            <el-radio-group v-model="settingInfo.dlScpoe" size="large" style="margin-bottom: 12px;">
               <el-radio-button label="全部" value="all" />
               <el-radio-button label="今日" value="one" />
               <el-radio-button label="7天内" value="seven" />
               <el-radio-button label="一个月内" value="month" />
               <el-radio-button label="自定义" value="diy" />
             </el-radio-group>
-            <div v-if="settingInfo.dlScpoe === 'diy'" style="margin-top: 5px">
-              <el-date-picker v-model="settingInfo.startDate" style="width: 180px" type="date" placeholder="选择开始日期"
-                format="YYYY年MM月DD日" value-format="YYYY-MM-DD"></el-date-picker>
-              <el-date-picker v-model="settingInfo.endDate" style="width: 180px" type="date" placeholder="选择结束日期"
-                format="YYYY年MM月DD日" value-format="YYYY-MM-DD"></el-date-picker>
+            <div v-if="settingInfo.dlScpoe === 'diy'" class="date-picker-group">
+              <el-date-picker v-model="settingInfo.startDate" type="date" placeholder="开始日期" format="YYYY年MM月DD日"
+                value-format="YYYY-MM-DD" style="width: 100%;" />
+              <el-date-picker v-model="settingInfo.endDate" type="date" placeholder="结束日期" format="YYYY年MM月DD日"
+                value-format="YYYY-MM-DD" style="width: 100%;" />
             </div>
-          </div>
-          <div title="不懂的建议使用默认配置,间隔:500,单批:10" class="div-border div-pd">
-            <div>
-              <span class="line-center">线程配置 </span>
-              <el-radio-group v-model="settingInfo.threadType">
-                <el-radio-button label="单线程" value="single" />
-                <el-radio-button label="多线程" value="multi" />
-              </el-radio-group>
+          </el-card>
+
+          <!-- 线程配置 -->
+          <el-card class="setting-card" shadow="hover">
+            <template #header>
+              <div class="card-header">
+                <el-icon>
+                  <Connection />
+                </el-icon>
+                <span>线程配置</span>
+              </div>
+            </template>
+            <el-radio-group v-model="settingInfo.threadType" size="large" style="margin-bottom: 16px;">
+              <el-radio-button label="单线程" value="single" />
+              <el-radio-button label="多线程" value="multi" />
+            </el-radio-group>
+            <div class="number-input-group">
+              <div class="input-item">
+                <span class="input-label">
+                  <el-icon>
+                    <Timer />
+                  </el-icon>
+                  下载间隔 (毫秒)
+                </span>
+                <el-input-number v-model="settingInfo.dlInterval" controls-position="right" :min="0" size="default" />
+              </div>
+              <div class="input-item">
+                <span class="input-label">
+                  <el-icon>
+                    <Grid />
+                  </el-icon>
+                  单批数量
+                </span>
+                <el-input-number v-model="settingInfo.batchLimit" controls-position="right" :min="0" size="default" />
+              </div>
             </div>
-            <div>
-              <span title="单位毫秒">
-                下载间隔
-                <el-input-number v-model="settingInfo.dlInterval" controls-position="right" precision="0"
-                  style="width: 100px" size="small" :min="0" />
-              </span>
-              <span class="batch-limit"> 单批数量：<el-input-number v-model="settingInfo.batchLimit"
-                  controls-position="right" precision="0" style="width: 100px" size="small" :min="0" /> </span>
-            </div>
-          </div>
-          <div v-if="settingInfo.dlMysql" class="div-border div-pd">
-            <div style="margin-bottom: 5px"><span>Mysql配置：</span><el-button type="primary" size="small"
-                @click="testConnect">测试连接</el-button></div>
-            <el-form :model="settingInfo" label-width="auto">
+          </el-card>
+
+          <!-- MySQL配置 -->
+          <el-card v-if="settingInfo.dlMysql" class="setting-card" shadow="hover">
+            <template #header>
+              <div class="card-header">
+                <el-icon>
+                  <Coin />
+                </el-icon>
+                <span>MySQL 配置</span>
+                <el-button type="primary" size="small" @click="testConnect" style="margin-left: auto;">
+                  测试连接
+                </el-button>
+              </div>
+            </template>
+            <el-form :model="settingInfo" label-width="70px" label-position="left">
               <el-form-item label="主机">
-                <el-input v-model="settingInfo.mysqlHost" />
+                <el-input v-model="settingInfo.mysqlHost" placeholder="localhost" />
               </el-form-item>
               <el-form-item label="端口">
-                <el-input v-model="settingInfo.mysqlPort" />
+                <el-input v-model="settingInfo.mysqlPort" placeholder="3306" />
               </el-form-item>
               <el-form-item label="用户名">
                 <el-input v-model="settingInfo.mysqlUser" />
               </el-form-item>
               <el-form-item label="密码">
-                <el-input v-model="settingInfo.mysqlPassword" />
+                <el-input v-model="settingInfo.mysqlPassword" type="password" show-password />
               </el-form-item>
               <el-form-item label="数据库">
                 <el-input v-model="settingInfo.mysqlDatabase" />
@@ -129,30 +228,70 @@
                 <el-input v-model="settingInfo.tableName" />
               </el-form-item>
             </el-form>
-          </div>
+          </el-card>
         </el-col>
       </el-row>
-    </el-main>
-    <el-footer style="height: auto; margin-bottom: 5px">
-      <div class="foot-item">
-        <el-input v-model="settingInfo.savePath" class="path-input" disabled placeholder="请选择保存路径" />
-        <el-button type="primary" @click="chosePath('savePath')">选择保存路径</el-button>
-      </div>
-      <div class="foot-item">
-        <el-input v-model="settingInfo.tmpPath" class="path-input" disabled placeholder="请选择缓存路径" />
-        <el-button type="primary" @click="chosePath('tmpPath')">选择缓存路径</el-button>
-      </div>
-      <div>
-        <div style="margin-bottom: 5px">
-          <span style="margin-right: 5px">当前版本：{{ updateInfo.version }}</span>
-          <el-button type="primary" @click="checkUpdate">检查更新</el-button>
-          <el-button type="primary" @click="openLogsDir">打开日志位置</el-button>
+      <el-card shadow="never">
+        <!-- 路径设置 -->
+        <div class="footer-section">
+          <div class="path-item">
+            <span class="path-label">
+              <el-icon>
+                <FolderOpened />
+              </el-icon>
+              保存路径
+            </span>
+            <el-input v-model="settingInfo.savePath" readonly />
+            <el-button type="primary" @click="chosePath('savePath')">
+              选择路径
+            </el-button>
+          </div>
+          <div class="path-item">
+            <span class="path-label">
+              <el-icon>
+                <Folder />
+              </el-icon>
+              缓存路径
+            </span>
+            <el-input v-model="settingInfo.tmpPath" readonly />
+            <el-button type="primary" @click="chosePath('tmpPath')">
+              选择路径
+            </el-button>
+          </div>
         </div>
-        <el-progress v-if="updateInfo.code == 3" :percentage="updateInfo.percentage"> {{ updateInfo.percentageMsg }}
-        </el-progress>
-        <div v-if="updateInfo.code > 0 && updateInfo.code != 3">{{ updateInfo.msg }}</div>
-      </div>
-    </el-footer>
+
+        <!-- 版本信息 -->
+        <el-divider />
+        <div class="footer-section">
+          <div class="version-info">
+            <el-tag type="info" size="large">
+              <el-icon>
+                <InfoFilled />
+              </el-icon>
+              当前版本：{{ updateInfo.version }}
+            </el-tag>
+            <div class="version-actions">
+              <el-button type="primary" @click="checkUpdate">
+                <el-icon>
+                  <Refresh />
+                </el-icon>
+                检查更新
+              </el-button>
+              <el-button type="default" @click="openLogsDir">
+                <el-icon>
+                  <Document />
+                </el-icon>
+                打开日志
+              </el-button>
+            </div>
+          </div>
+          <el-progress v-if="updateInfo.code == 3" :percentage="updateInfo.percentage"
+            :format="() => updateInfo.percentageMsg" />
+          <el-alert v-if="updateInfo.code > 0 && updateInfo.code != 3" :title="updateInfo.msg" type="info"
+            :closable="false" />
+        </div>
+      </el-card>
+    </el-main>
   </el-container>
 </template>
 
@@ -160,6 +299,30 @@
 import { reactive, watch } from 'vue';
 import { OpenDialogOptions } from 'electron';
 import { ProgressInfo } from 'builder-util-runtime';
+import {
+  Download,
+  FolderOpened,
+  Coordinate,
+  Filter,
+  Setting,
+  Document,
+  Headset,
+  EditPen,
+  Picture,
+  ChatDotRound,
+  Coin,
+  ChatLineRound,
+  CircleClose,
+  Link,
+  Files,
+  Folder,
+  Calendar,
+  Connection,
+  Timer,
+  Grid,
+  InfoFilled,
+  Refresh
+} from '@element-plus/icons-vue';
 
 const settingInfo = reactive({
   // 下载来源
@@ -336,42 +499,150 @@ window.api.downloadProgress(async (_event, progressObj: ProgressInfo) => {
 </script>
 
 <style scoped>
-.line-center {
-  vertical-align: -webkit-baseline-middle;
+.setting-container {
+  height: 100%;
+  background: #f5f7fa;
 }
 
-.el-header {
-  --el-header-padding: 0 10px;
+.setting-alert {
+  background: #f5f7fa;
 }
 
-.el-main {
-  --el-main-padding: 0 10px 10px 10px;
+.setting-alert-info {
+  display: inline;
+  margin-right: 10px;
 }
 
-.el-form-item {
-  margin-bottom: 5px;
+.setting-main {
+  --el-main-padding: 24px;
+  overflow-y: auto;
+}
+
+.setting-card {
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.card-header .el-icon {
+  font-size: 18px;
+  color: var(--el-color-primary);
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 .el-checkbox {
-  height: 32px;
-}
-
-.div-border {
-  border: 1px solid var(--el-border-color);
-}
-
-.div-pd {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 5px;
-}
-
-.path-input {
-  margin-right: 5px;
-}
-
-.foot-item {
   display: flex;
-  margin-bottom: 5px;
+  align-items: center;
+  height: auto;
+  margin: 0;
+}
+
+.el-checkbox .el-icon {
+  margin-right: 4px;
+}
+
+.date-picker-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.number-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #606266;
+}
+
+.input-label .el-icon {
+  color: var(--el-color-primary);
+}
+
+.el-form-item {
+  margin-bottom: 12px;
+}
+
+.footer-section {
+  margin-bottom: 16px;
+}
+
+.footer-section:last-child {
+  margin-bottom: 0;
+}
+
+.path-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.path-item:last-child {
+  margin-bottom: 0;
+}
+
+.path-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 90px;
+  font-size: 14px;
+  color: #606266;
+}
+
+.path-label .el-icon {
+  color: var(--el-color-primary);
+}
+
+.path-item .el-input {
+  flex: 1;
+}
+
+.version-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.version-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.el-tag {
+  padding: 8px 12px;
+  height: auto;
+}
+
+.el-tag .el-icon {
+  margin-right: 4px;
 }
 </style>

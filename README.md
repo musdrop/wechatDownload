@@ -140,6 +140,10 @@ Electron + Typescript + VUE3
 
 ## 源码运行&编译
 
+### 环境
+node：v20  
+cheerio: 1.0.0-rc.12（需要固定为该版本）
+
 ### 安装
 
 ```bash
