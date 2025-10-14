@@ -17,7 +17,7 @@
           </div>
           <div class="div-border div-pd" title="json格式">
             <span>过滤规则</span>
-            <el-input v-model="settingInfo.filterRule" placeholder="输入微信文章链接，点击右侧下载按钮" />
+            <el-input v-model="settingInfo.filterRule" placeholder="筛选文章" />
           </div>
           <div class="div-border div-pd">
             <el-row>
