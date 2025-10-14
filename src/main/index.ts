@@ -133,9 +133,9 @@ app.whenReady().then(() => {
   });
   // 根据url下载单篇文章
   ipcMain.on('download-one', (_event, url: string) => downloadOne(url));
-  // 批量下载，开启公号文章监测，获取用户参数
+  // 批量下载，开启公众号文章监测，获取用户参数
   ipcMain.on('monitor-article', () => monitorArticle());
-  // 批量下载，开启公号文章监测，获取用户参数和文章地址
+  // 批量下载，开启公众号文章监测，获取用户参数和文章地址
   ipcMain.on('monitor-limit-article', () => monitorLimitArticle());
   ipcMain.on('stop-monitor-limit-article', () => stopMonitorLimitArticle());
   // 测试数据库连接
@@ -333,7 +333,7 @@ async function html2Pdf(pdfInfo: PdfInfo) {
 }
 
 /*
- * 开启公号文章监测,获取用户参数
+ * 开启公众号文章监测,获取用户参数
  */
 async function monitorArticle() {
   if ('db' == store.get('dlSource')) {
@@ -352,19 +352,19 @@ async function monitorArticle() {
     AnyProxy.utils.systemProxyMgr.enableGlobalProxy('127.0.0.1', '8001', 'https');
     outputLog('下载来源为网络');
     outputLog('代理开启成功，准备批量下载...', true);
-    outputLog('请在微信打开任意一篇需要批量下载的公号的文章', true);
+    outputLog('请在微信打开任意一篇需要批量下载的公众号的文章', true);
     outputLog('别偷懒，已经打开的不算...', true);
 
     // 10秒之后自动关闭代理
     TIMER = setTimeout(() => {
-      outputLog('批量下载超时，未监测到公号文章！', true);
+      outputLog('批量下载超时，未监测到公众号文章！', true);
       AnyProxy.utils.systemProxyMgr.disableGlobalProxy();
       MAIN_WINDOW.webContents.send('download-fnish');
     }, 15000);
   }
 }
 /*
- * 开启公号文章监测,获取文章地址和用户参数
+ * 开启公众号文章监测,获取文章地址和用户参数
  */
 async function monitorLimitArticle() {
   if (!PROXY_SERVER) {
@@ -404,8 +404,10 @@ function createProxy(): AnyProxy.ProxyServer {
     rule: {
       summary: 'My Custom Rule',
       beforeSendResponse(requestDetail, responseDetail) {
+        logger.debug('拦截，请求url', requestDetail.url);
         // 批量下载
-        if (DL_TYPE == DlEventEnum.BATCH_WEB && requestDetail.url.indexOf('https://mp.weixin.qq.com/mp/getbizbanner') == 0) {
+        if (DL_TYPE == DlEventEnum.BATCH_WEB && requestDetail.url.indexOf('https://mp.weixin.qq.com/s') == 0) {
+          logger.debug('批量下载');
           const uin = HttpUtil.getQueryVariable(requestDetail.url, 'uin');
           const biz = HttpUtil.getQueryVariable(requestDetail.url, '__biz');
           const key = HttpUtil.getQueryVariable(requestDetail.url, 'key');
@@ -420,8 +422,8 @@ function createProxy(): AnyProxy.ProxyServer {
               GZH_INFO.UserAgent = headers['User-Agent'] as string;
             }
 
-            logger.debug('微信公号参数', GZH_INFO);
-            outputLog(`已监测到文章，请确认是否批量下载该文章所属公号`, true);
+            logger.debug('微信公众号参数', GZH_INFO);
+            outputLog(`已监测到文章，请确认是否批量下载该文章所属公众号`, true);
             if (!MAIN_WINDOW.focusable) {
               MAIN_WINDOW.focus();
             }
@@ -430,7 +432,7 @@ function createProxy(): AnyProxy.ProxyServer {
               .showMessageBox(MAIN_WINDOW, {
                 type: 'info',
                 title: '下载',
-                message: '请确认是否批量下载该文章所属公号',
+                message: '请确认是否批量下载该文章所属公众号',
                 buttons: ['取消', '确定']
               })
               .then((index) => {
@@ -446,11 +448,11 @@ function createProxy(): AnyProxy.ProxyServer {
             AnyProxy.utils.systemProxyMgr.disableGlobalProxy();
             if (TIMER) clearTimeout(TIMER);
           } else {
-            logger.error('微信公号参数获取失败', requestDetail);
+            logger.error('微信公众号参数获取失败', requestDetail);
           }
         }
-        // 单条下载
-        if (DL_TYPE == DlEventEnum.BATCH_SELECT && requestDetail.url.indexOf('https://mp.weixin.qq.com/mp/geticon') == 0) {
+        // 监控下载，单条处理
+        if (DL_TYPE == DlEventEnum.BATCH_SELECT && requestDetail.url.indexOf('https://mp.weixin.qq.com/s') == 0) {
           const headers = requestDetail.requestOptions.headers;
           if (headers) {
             const referer = headers['Referer'] as string;
@@ -484,7 +486,7 @@ function createProxy(): AnyProxy.ProxyServer {
   const proxyServer = new AnyProxy.ProxyServer(options);
 
   // proxyServer.on('ready', () => {
-  //   outputLog(`代理开启成功，准备批量下载，请在微信打开任意一篇需要批量下载的公号的文章`);
+  //   outputLog(`代理开启成功，准备批量下载，请在微信打开任意一篇需要批量下载的公众号的文章`);
   // });
   proxyServer.on('error', () => {
     outputLog(`代理开启失败，请重试`);
@@ -573,7 +575,7 @@ function setDefaultSetting() {
     skinExist: 1,
     // 是否保存元数据
     saveMeta: 1,
-    // 按公号名字分类
+    // 按公众号名字分类
     classifyDir: 1,
     // 添加原文链接
     sourceUrl: 1,

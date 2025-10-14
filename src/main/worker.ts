@@ -133,6 +133,10 @@ async function axiosDlOne(articleInfo: ArticleInfo, reCall = false) {
   const gzhInfo = articleInfo.gzhInfo;
   await axios
     .get(articleInfo.contentUrl, {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090719) XWEB/9129 Flue'
+      },
       params: {
         key: gzhInfo ? gzhInfo.key : '',
         uin: gzhInfo ? gzhInfo.uin : ''
@@ -157,7 +161,7 @@ async function axiosDlOne(articleInfo: ArticleInfo, reCall = false) {
  * 下载单个页面
  */
 async function dlOne(articleInfo: ArticleInfo, saveToDb = true) {
-  // 预处理微信公号文章html
+  // 预处理微信公众号文章html
   if (!articleInfo.html) return;
   const url = articleInfo.contentUrl;
   const $source = service.prepHtml(articleInfo.html);

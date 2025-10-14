@@ -3,7 +3,7 @@ import { StrUtil } from './utils';
 import * as cheerio from 'cheerio';
 import TurndownService from 'turndown';
 
-// 获取公号文章列表需要的信息
+// 获取公众号文章列表需要的信息
 class GzhInfo {
   public biz: string;
   public key: string;
@@ -19,7 +19,7 @@ class GzhInfo {
     this.uin = uin;
   }
 }
-// 公号文章信息类
+// 公众号文章信息类
 class ArticleInfo {
   // 标题
   public title?: string;
@@ -58,7 +58,7 @@ class ArticleMeta {
   public copyrightFlg?: boolean;
   // 作者
   public author?: string;
-  // 公号名
+  // 公众号名
   public jsName?: string;
   // 发布时间
   public publicTime?: string;
@@ -93,7 +93,7 @@ class DownloadOption {
   public skinExist?: number;
   // 是否保存元数据
   public saveMeta?: number;
-  // 是否按公号名字归类
+  // 是否按公众号名字归类
   public classifyDir?: number;
   // 是否添加原文链接
   public sourceUrl?: number;
@@ -229,7 +229,7 @@ class Service {
   }
 
   /*
-   * 预处理微信公号文章html
+   * 预处理微信公众号文章html
    */
   public prepHtml(html: string): any {
     const $ = cheerio.load(html);
@@ -632,7 +632,7 @@ class Service {
       htmlStr += `<span>作者:${articleMeta.author} </span>`;
     }
     if (articleMeta.jsName) {
-      htmlStr += `<span>公号:${articleMeta.jsName} </span>`;
+      htmlStr += `<span>公众号:${articleMeta.jsName} </span>`;
     }
     if (articleMeta.publicTime) {
       htmlStr += `<span>发布时间:${articleMeta.publicTime} </span>`;
@@ -701,7 +701,7 @@ class Service {
         return node.outerHTML;
       }
     });
-    // 专门针对微信公号文章页面做得规则
+    // 专门针对微信公众号文章页面做得规则
     turndownService.addRule('pre', {
       filter: function (node, options) {
         let isCodeBlock = false;

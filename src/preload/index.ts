@@ -14,9 +14,9 @@ const api = {
   showOpenDialog: (options: OpenDialogOptions, callbackMsg: string) => ipcRenderer.send('show-open-dialog', options, callbackMsg),
   // 下载详情页数据
   downloadOne: (url: string) => ipcRenderer.send('download-one', url),
-  // 开启公号文章监测（获取用户参数）
+  // 开启公众号文章监测（获取用户参数）
   monitorArticle: () => ipcRenderer.send('monitor-article'),
-  // 开启公号文章监测（历史接口被封使用，获取文章地址）
+  // 开启公众号文章监测（历史接口被封使用，获取文章地址）
   monitorLimitArticle: () => ipcRenderer.send('monitor-limit-article'),
   stopMonitorLimitArticle: () => ipcRenderer.send('stop-monitor-limit-article'),
   // 测试mysql连接

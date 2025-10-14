@@ -65,13 +65,13 @@
                 <el-checkbox v-model="settingInfo.saveMeta" label="保存元数据" size="large" />
               </el-col>
               <el-col :span="12">
-                <el-checkbox v-model="settingInfo.classifyDir" label="按公号分类保存" size="large" />
+                <el-checkbox v-model="settingInfo.classifyDir" label="按公众号分类保存" size="large" />
               </el-col>
             </el-row>
           </div>
         </el-col>
-        <el-col :span="12"
-          ><div class="grid-content ep-bg-purple" />
+        <el-col :span="12">
+          <div class="grid-content ep-bg-purple" />
           <div class="item div-border div-pd">
             <div>下载范围</div>
             <el-radio-group v-model="settingInfo.dlScpoe">
@@ -82,8 +82,10 @@
               <el-radio-button label="自定义" value="diy" />
             </el-radio-group>
             <div v-if="settingInfo.dlScpoe === 'diy'" style="margin-top: 5px">
-              <el-date-picker v-model="settingInfo.startDate" style="width: 180px" type="date" placeholder="选择开始日期" format="YYYY年MM月DD日" value-format="YYYY-MM-DD"></el-date-picker>
-              <el-date-picker v-model="settingInfo.endDate" style="width: 180px" type="date" placeholder="选择结束日期" format="YYYY年MM月DD日" value-format="YYYY-MM-DD"></el-date-picker>
+              <el-date-picker v-model="settingInfo.startDate" style="width: 180px" type="date" placeholder="选择开始日期"
+                format="YYYY年MM月DD日" value-format="YYYY-MM-DD"></el-date-picker>
+              <el-date-picker v-model="settingInfo.endDate" style="width: 180px" type="date" placeholder="选择结束日期"
+                format="YYYY年MM月DD日" value-format="YYYY-MM-DD"></el-date-picker>
             </div>
           </div>
           <div title="不懂的建议使用默认配置,间隔:500,单批:10" class="div-border div-pd">
@@ -97,13 +99,16 @@
             <div>
               <span title="单位毫秒">
                 下载间隔
-                <el-input-number v-model="settingInfo.dlInterval" controls-position="right" precision="0" style="width: 100px" size="small" :min="0" />
+                <el-input-number v-model="settingInfo.dlInterval" controls-position="right" precision="0"
+                  style="width: 100px" size="small" :min="0" />
               </span>
-              <span class="batch-limit"> 单批数量：<el-input-number v-model="settingInfo.batchLimit" controls-position="right" precision="0" style="width: 100px" size="small" :min="0" /> </span>
+              <span class="batch-limit"> 单批数量：<el-input-number v-model="settingInfo.batchLimit"
+                  controls-position="right" precision="0" style="width: 100px" size="small" :min="0" /> </span>
             </div>
           </div>
           <div v-if="settingInfo.dlMysql" class="div-border div-pd">
-            <div style="margin-bottom: 5px"><span>Mysql配置：</span><el-button type="primary" size="small" @click="testConnect">测试连接</el-button></div>
+            <div style="margin-bottom: 5px"><span>Mysql配置：</span><el-button type="primary" size="small"
+                @click="testConnect">测试连接</el-button></div>
             <el-form :model="settingInfo" label-width="auto">
               <el-form-item label="主机">
                 <el-input v-model="settingInfo.mysqlHost" />
@@ -143,7 +148,8 @@
           <el-button type="primary" @click="checkUpdate">检查更新</el-button>
           <el-button type="primary" @click="openLogsDir">打开日志位置</el-button>
         </div>
-        <el-progress v-if="updateInfo.code == 3" :percentage="updateInfo.percentage"> {{ updateInfo.percentageMsg }} </el-progress>
+        <el-progress v-if="updateInfo.code == 3" :percentage="updateInfo.percentage"> {{ updateInfo.percentageMsg }}
+        </el-progress>
         <div v-if="updateInfo.code > 0 && updateInfo.code != 3">{{ updateInfo.msg }}</div>
       </div>
     </el-footer>
@@ -180,7 +186,7 @@ const settingInfo = reactive({
   skinExist: 1,
   // 是否保存元数据
   saveMeta: 1,
-  // 按公号名字分类
+  // 按公众号名字分类
   classifyDir: 1,
   // 添加原文链接
   sourceUrl: 1,
