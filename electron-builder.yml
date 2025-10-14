@@ -47,7 +47,7 @@ appImage:
 npmRebuild: false
 publish:
   provider: github
-  owner: xiaoguyu
+  owner: musdrop
   repo: wechatDownload
 releaseInfo:
   releaseNotes: |
