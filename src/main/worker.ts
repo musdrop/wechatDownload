@@ -135,7 +135,9 @@ async function axiosDlOne(articleInfo: ArticleInfo, reCall = false) {
     .get(articleInfo.contentUrl, {
       headers: {
         'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090719) XWEB/9129 Flue'
+          gzhInfo?.UserAgent || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090719) XWEB/9129 Flue',
+        'Cookie': gzhInfo?.Cookie || '',
+        'Host': gzhInfo?.Host
       },
       params: {
         key: gzhInfo ? gzhInfo.key : '',
@@ -629,7 +631,8 @@ async function downloadComment(articleInfo: ArticleInfo) {
     return;
   }
 
-  const commentId = service.matchCommentId(articleInfo.html);
+  // const commentId = service.matchCommentId(articleInfo.html);
+  const commentId = '2';
   if (!commentId) {
     logger.error('获取精选评论参数失败');
     resp(NwrEnum.FAIL, '获取精选评论参数失败');
